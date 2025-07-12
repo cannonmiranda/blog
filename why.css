@@ -1,0 +1,15 @@
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .back-btn, .signup-btn {
+    width: 100%;
+    margin: 5px 0;
+  }

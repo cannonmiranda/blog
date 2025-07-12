@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cannon's Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to bottom, navy, black);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Stars */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: shoot linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-800px, 800px);
+        opacity: 0;
+      }
+    }
+
+    /* Welcome Text */
+    .welcome-text {
+      font-size: 70px;
+      font-weight: bold;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scrollText 8s linear infinite;
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Pop-up Box */
+    .popup {
+      background-color: white;
+      color: navy;
+      padding: 80px;
+      border-radius: 75px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 22px 35px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 22px;
+      cursor: pointer;
+      font-size: 26px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #001f4d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stars Script -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.animationDuration = 2 + Math.random() * 4 + "s";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <!-- Welcome Text -->
+  <div class="welcome-text">ಹಾಂವ್ ತುಮ್ಚೊಚ್ಚ್ ಮೊಗಾಳ್, ಕ್ಯಾನನ್ ಮಿರಾಂದ, ಬಂಟ್ವಾಳ್</div>
+
+  <!-- Pop-up -->
+  <div class="popup">
+    <button class="button" onclick="nextPage()">ಸೊದ್ಣಾಂ ಕರುಂಕ್ ತುಂ ತಯಾರ್???</button>
+  </div>
+
+  <script>
+    function nextPage() {
+      window.location.href = "home.html"; // Replace with actual next page
+    }
+  </script>
+</body>
+</html>
